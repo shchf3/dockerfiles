@@ -95,8 +95,8 @@ class Speedtest(object):
             webapi.postApi('func/speedtest',
                                  {'node_id': configloader.get_config().NODE_ID},
                                  {'data': [{'telecomping': CTPing,
-                                            'telecomeupload': CTUpSpeed,
-                                            'telecomedownload': CTDLSpeed,
+                                            'telecomupload': CTUpSpeed,
+                                            'telecomdownload': CTDLSpeed,
                                             'unicomping': CUPing,
                                             'unicomupload': CUUpSpeed,
                                             'unicomdownload': CUDLSpeed,
@@ -128,7 +128,7 @@ class Speedtest(object):
             conn.autocommit(True)
             cur = conn.cursor()
             cur.execute(
-                "INSERT INTO `speedtest` (`id`, `nodeid`, `datetime`, `telecomping`, `telecomeupload`, `telecomedownload`, `unicomping`, `unicomupload`, `unicomdownload`, `cmccping`, `cmccupload`, `cmccdownload`) VALUES (NULL, '" +
+                "INSERT INTO `speedtest` (`id`, `nodeid`, `datetime`, `telecomping`, `telecomupload`, `telecomdownload`, `unicomping`, `unicomupload`, `unicomdownload`, `cmccping`, `cmccupload`, `cmccdownload`) VALUES (NULL, '" +
                 str(
                     configloader.get_config().NODE_ID) +
                 "', unix_timestamp(), '" +
